@@ -1,8 +1,8 @@
 project('sample_cpp_project', 'cpp',
     version : '1.0',
     license : [ 'proprietary'],
-    meson_version : '>= 0.40.1',
-    default_options : [ 'warning_level=3', 'buildtype=debugoptimized', 'cpp_std=c++11' ]
+    meson_version : '>= 0.50.0',
+    default_options : [ 'warning_level=3', 'buildtype=debugoptimized', 'cpp_std=c++17' ]
 )
 
 # Variables tracking sources and libraries
@@ -23,7 +23,7 @@ subdir('src')
 # This links all the static libs into the main source file to form a binary
 
 sample_cpp_project_bin_deps = [
-  meson.get_compiler('cpp').find_library('fizz', required : true, dirs : library_path)
+#  meson.get_compiler('cpp').find_library('fizz', required : true, dirs : library_path)
 ]
 
 sample_cpp_project_bin_dep_libs = [
